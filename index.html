@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://kit-pro.fontawesome.com/releases/v5.13.0/css/pro.min.css">
+    <!--bootsratp-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Acme', sans-serif;
+    }
+    
+    .layout {
+        background: url('bg.jpg') no-repeat center center;
+        background-size: cover;
+        position: relative;
+    }
+    
+    .layout .content {
+        background-color: rgb(22 30 53 / 76%);
+        padding: 2.5rem;
+        position: relative;
+    }
+    
+    .layout .content img.img-fluid {
+        position: absolute;
+        filter: grayscale(1);
+        top: 0;
+        right: 11px;
+        height: 43px;
+    }
+    
+    .layout h3,
+    .layout .content .text .date,
+    .layout .content .text .amount,
+    .layout .content .person-info .person,
+    .layout .content .person-info .id,
+    .layout .content .egyPound {
+        color: #f6faff;
+        margin: 2rem 0;
+        text-shadow: 2px 2px #7780fc;
+    }
+    
+    .layout .content .text .amount span,
+    .layout .content .person-info .person span,
+    .layout .content .person-info .id span,
+    .layout .content .egyPound span {
+        color: white;
+        margin-left: 6px;
+        font-size: 10px;
+        text-shadow: none;
+    }
+    
+    .layout .content .person span {
+        font-weight: bold;
+    }
+    
+    .layout .content .text .amount span {
+        border: 1px solid #DDD;
+        padding: .2rem .5rem;
+        border-radius: 8px;
+    }
+    
+    .layout .content .text {
+        margin-top: -18px;
+    }
+    
+    .layout h3 {
+        text-align: center;
+        margin: 0rem 0 -.5rem 0;
+    }
+    
+    .col-sm-6 {
+        padding: 0;
+    }
+    
+    .col-3 {
+        margin-left: -14px !important;
+    }
+    
+    .layout .content .text .date input {
+        background: transparent;
+        border: 3px solid #bdc8d6;
+        padding: 1px 5px;
+        color: white;
+        margin-left: 5px;
+    }
+    
+    .layout .content .text .date input[type="date"]::-webkit-inner-spin-button,
+    .layout .content .text .date input[type="date"]::-webkit-calendar-picker-indicator {
+        display: none;
+        -webkit-appearance: none;
+    }
+    
+    .layout .content .link {
+        color: white;
+        padding-top: 16px;
+        display: flex;
+        position: absolute;
+        bottom: 0;
+    }
+    
+    .layout .content .link img {
+        position: relative;
+        top: -4px;
+        margin-right: 11px;
+    }
+    
+    @media (min-width:500px) {
+        .layout h3 {
+            font-size: 23px;
+        }
+        .col-8,
+        .col-4 {
+            padding: 0;
+        }
+        .layout .content .text .amount span,
+        .layout .content .person-info .person span,
+        .layout .content .person-info .id span,
+        .layout .content .egyPound span {
+            font-size: 10px;
+        }
+    }
+    
+    @media (min-width:992px) {
+        .layout .content img.img-fluid {
+            right: 60px;
+            height: 45px;
+        }
+        .layout .content .egyPound {
+            margin: 4.3rem 0 64px 0;
+        }
+        .layout .content .text .date,
+        .layout .content .text .amount,
+        .layout .content .person-info .person,
+        .layout .content .person-info .id,
+        .layout .content .egyPound {
+            font-size: 25px;
+        }
+        .layout .content .text .amount span {
+            padding: 0.2rem 1.5rem;
+            font-size: 18px;
+        }
+        .layout .content .text .date input {
+            padding: 0px 5px;
+            font-size: 20px;
+        }
+        .layout .content .link {
+            padding-top: 0px;
+        }
+        .col-3 {
+            margin-left: -60px !important;
+        }
+        .layout .content .text .amount span,
+        .layout .content .person-info .person span,
+        .layout .content .person-info .id span,
+        .layout .content .egyPound span {
+            font-size: 20px;
+        }
+        @media (min-width:1200px) {
+            .layout {
+                background-size: 84%;
+            }
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="layout col-sm-6">
+
+                <div class="content">
+                    <img src="logo1.jpg" class="img-fluid" alt="" srcset="">
+                    <h3>WEEKLY EARNING</h3>
+                    <div class="text row">
+                        <div class="date col-9">DATE :<input type="date" name="" id=""></div>
+                        <div class="amount col-3"> EGP<span>15000</span></div>
+                    </div>
+                    <div class="person-info row">
+                        <div class="person col-9">NAME : <span>محمد عبد الناصر همام</span></div>
+                        <div class="id col-3"> ID: <span>012</span></div>
+
+                    </div>
+                    <div class="egyPound">EGYPTION POUNDS : <span>fiftin thousand pound</span></div>
+                    <div class="link"><img src="icon.png" alt="" srcset=""><span>HTTPS://ALHADABABRAND.COM/</span></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
