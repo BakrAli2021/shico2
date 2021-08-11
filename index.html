@@ -32,12 +32,13 @@
     
     .layout .content {
         background-color: rgb(22 30 53 / 76%);
-        padding: 2.5rem;
+        padding: 2rem;
         position: relative;
     }
     
     .layout .content img.img-fluid {
         position: absolute;
+        filter: grayscale(1);
         top: 0;
         right: 11px;
         height: 43px;
@@ -52,6 +53,20 @@
         color: #f6faff;
         margin: 2rem 0;
         text-shadow: 2px 2px #7780fc;
+        padding-left: 0;
+    }
+    
+    .layout .content .person-info .id {
+        flex-basis: 30%;
+    }
+    
+    .layout .content .person-info {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .layout .content .egyPound {
+        font-size: 14px;
     }
     
     .layout .content .text .amount span,
@@ -60,7 +75,7 @@
     .layout .content .egyPound span {
         color: white;
         margin-left: 6px;
-        font-size: 10px;
+        font-size: 16px;
         text-shadow: none;
     }
     
@@ -113,7 +128,7 @@
         padding-top: 16px;
         display: flex;
         position: absolute;
-        bottom: 0;
+        bottom: 5px;
     }
     
     .layout .content .link img {
@@ -122,7 +137,7 @@
         margin-right: 11px;
     }
     
-    @media (min-width:500px) {
+    @media (min-width:200px) {
         .layout h3 {
             font-size: 23px;
         }
@@ -134,7 +149,7 @@
         .layout .content .person-info .person span,
         .layout .content .person-info .id span,
         .layout .content .egyPound span {
-            font-size: 10px;
+            font-size: 16px;
         }
     }
     
@@ -152,6 +167,9 @@
         .layout .content .person-info .id,
         .layout .content .egyPound {
             font-size: 25px;
+        }
+        .layout .content .person-info .id {
+            flex-basis: 39%;
         }
         .layout .content .text .amount span {
             padding: 0.2rem 1.5rem;
@@ -190,16 +208,17 @@
                     <img src="logo1.jpg" class="img-fluid" alt="" srcset="">
                     <h3>WEEKLY EARNING</h3>
                     <div class="text row">
-                        <div class="date col-9">DATE :<input type="date" name="" id="" readonly></div>
+                        <div class="date col-9"><span>DATE :</span><input type="date" name="" id="" readonly></div>
                         <div class="amount col-3"> EGP<span>15000</span></div>
                     </div>
                     <div class="person-info row">
-                        <div class="person col-9">NAME : <span>محمد عبد الناصر همام</span></div>
-                        <div class="id col-3"> ID: <span>012</span></div>
-
+                        <div class="person">NAME : <span>محمد عبد الناصر همام</span></div>
+                        <div class="id"> ID: <span>012</span></div>
                     </div>
-                    <div class="egyPound">EGYPTION POUNDS : <span>fiftin thousand pound</span></div>
-                    <div class="link"><img src="icon.png" alt="" srcset=""><span>HTTPS://ALHADABABRAND.COM/</span></div>
+                    <div class="row">
+                        <div class="egyPound">EGYPTION POUNDS : <span>fiftin thousand pound</span></div>
+                        <div class="link"><img src="icon.png" alt="" srcset=""><a>HTTPS://ALHADABABRAND.COM/</a></div>
+                    </div>
                 </div>
 
             </div>
