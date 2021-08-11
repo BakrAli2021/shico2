@@ -100,10 +100,12 @@
         font-size: 13px;
     }
     
-    .layout .content .text .date input[type="date"]::-webkit-inner-spin-button,
+    .layout .content .text .date input:focus {
+        outline: none;
+    }
+    
     .layout .content .text .date input[type="date"]::-webkit-calendar-picker-indicator {
         display: none;
-        -webkit-appearance: none;
     }
     
     .layout .content .link {
