@@ -124,16 +124,18 @@
     
     .layout .content .link {
         color: white;
-        padding-top: 16px;
         display: flex;
         position: absolute;
-        bottom: 5px;
+        bottom: 0px;
+        font-size: 14px;
     }
     
     .layout .content .link img {
         position: relative;
-        top: -4px;
-        margin-right: 11px;
+        margin-right: 5px;
+        width: 13px;
+        height: 13px;
+        bottom: -4px;
     }
     
     @media (min-width:200px) {
@@ -178,9 +180,6 @@
             padding: 0px 5px;
             font-size: 20px;
         }
-        .layout .content .link {
-            padding-top: 0px;
-        }
         .col-3 {
             margin-left: -60px !important;
         }
@@ -190,10 +189,17 @@
         .layout .content .egyPound span {
             font-size: 20px;
         }
-        @media (min-width:1200px) {
-            .layout {
-                background-size: 84%;
-            }
+        .layout .content .link {
+            font-size: 19px;
+        }
+        .layout .content .link img {
+            bottom: -6px;
+        }
+    }
+    
+    @media (min-width:1200px) {
+        .layout {
+            background-size: 84%;
         }
     }
 </style>
