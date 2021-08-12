@@ -13,222 +13,254 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <title>Document</title>
-</head>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Acme', sans-serif;
-    }
-    
-    .layout {
-        background: url('bg.jpg') no-repeat center center;
-        background-size: cover;
-        position: relative;
-    }
-    
-    .layout .content {
-        background-color: rgb(22 30 53 / 76%);
-        padding: 2rem;
-        position: relative;
-    }
-    
-    .layout .content img.img-fluid {
-        position: absolute;
-        top: 0;
-        right: 11px;
-        height: 43px;
-    }
-    
-    .layout h3,
-    .layout .content .text .date,
-    .layout .content .text .amount,
-    .layout .content .person-info .person,
-    .layout .content .person-info .id,
-    .layout .content .egyPound {
-        color: #f6faff;
-        margin: 2rem 0;
-        text-shadow: 2px 1px 4px #7780fc;
-        padding-left: 0;
-    }
-    
-    .layout .content .person-info .id {
-        flex-basis: 30%;
-    }
-    
-    .layout .content .person-info {
-        display: flex;
-        justify-content: space-between;
-    }
-    
-    .layout .content .egyPound {
-        font-size: 14px;
-    }
-    
-    .layout .content .text .amount span,
-    .layout .content .person-info .person span,
-    .layout .content .person-info .id span,
-    .layout .content .egyPound span {
-        color: white;
-        margin-left: 6px;
-        font-size: 16px;
-        text-shadow: none;
-    }
-    
-    .layout .content .person span {
-        font-weight: bold;
-    }
-    
-    .layout .content .text .amount span {
-        border: 1px solid #DDD;
-        padding: .2rem .5rem;
-        border-radius: 8px;
-    }
-    
-    .layout .content .text {
-        margin-top: -18px;
-    }
-    
-    .layout h3 {
-        text-align: center;
-        margin: 0rem 0 -.5rem 0;
-    }
-    
-    .col-sm-6 {
-        padding: 0;
-    }
-    
-    .col-3 {
-        margin-left: -14px !important;
-    }
-    
-    .layout .content .text .date input {
-        background: transparent;
-        border: 3px solid #bdc8d6;
-        padding: 1px 5px;
-        color: white;
-        margin-left: 5px;
-        font-size: 13px;
-    }
-    
-    .layout .content .text .date input:focus {
-        outline: none;
-    }
-    
-    .layout .content .text .date input[type="date"]::-webkit-calendar-picker-indicator {
-        display: none;
-    }
-    
-    .layout .content .link {
-        color: white;
-        display: flex;
-        position: absolute;
-        bottom: 0px;
-        font-size: 14px;
-    }
-    
-    .layout .content .link img {
-        position: relative;
-        margin-right: 5px;
-        width: 13px;
-        height: 13px;
-        bottom: -4px;
-    }
-    
-    @media (min-width:200px) {
-        .layout h3 {
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .layout {
+            background: url('bg.jpg');
+            position: relative;
+            background-size: cover;
+            background-position: center bottom;
+        }
+        
+        .layout::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #232323c7;
+            top: 0;
+            left: 0;
+        }
+        
+        .layout .content img.logo {
+            position: absolute;
+            top: 0;
+            right: 11px;
+            height: 43px;
+        }
+        
+        .layout .content {
+            position: relative;
+            z-index: 3;
+            color: #e1e7ff;
+        }
+        
+        .layout .content h1 {
+            text-align: center;
+            text-shadow: 3px 3px 7px #7780fc;
+            font-family: 'Bangers', cursive;
+        }
+        
+        .content .date-money,
+        .content .date-money .date,
+        .content .date-money .money,
+        .content .person-info,
+        .content .link {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+        
+        .content .date-money,
+        .content .person-info {
+            justify-content: space-between;
+        }
+        
+        .content .date-money .date span,
+        .content .person-info .name .p_label,
+        .content .egy_pound .egy_label,
+        .content .egy_pound .egy_label {
+            font-size: 27px;
+            text-shadow: 3px 3px 7px #7780fc;
+            font-family: 'Bangers', cursive;
+        }
+        
+        .content .egy_pound .egy_label {
             font-size: 23px;
         }
-        .col-8,
-        .col-4 {
-            padding: 0;
-        }
-        .layout .content .text .amount span,
-        .layout .content .person-info .person span,
-        .layout .content .person-info .id span,
-        .layout .content .egyPound span {
-            font-size: 16px;
-        }
-    }
-    
-    @media (min-width:992px) {
-        .layout .content img.img-fluid {
-            right: 60px;
-            height: 45px;
-        }
-        .layout .content .egyPound {
-            margin: 4.3rem 0 64px 0;
-        }
-        .layout .content .text .date,
-        .layout .content .text .amount,
-        .layout .content .person-info .person,
-        .layout .content .person-info .id,
-        .layout .content .egyPound {
+        
+        .content .person-info .name .p_name {
+            color: white;
             font-size: 25px;
+            padding-left: 15px;
         }
-        .layout .content .person-info .id {
-            flex-basis: 39%;
-        }
-        .layout .content .text .amount span {
-            padding: 0.2rem 1.5rem;
-            font-size: 18px;
-        }
-        .layout .content .text .date input {
-            padding: 0px 5px;
+        
+        .content .date-money .date input {
+            background-color: transparent;
+            border: 4px solid #c2ccd9;
+            color: #f1f1f1;
             font-size: 20px;
+            margin-left: 3%;
+            width: 57%;
+            padding-left: 15px;
         }
-        .col-3 {
-            margin-left: -60px !important;
+        
+        .content .date-money .money .egy {
+            font-size: 35px;
+            font-family: 'Bangers', cursive;
+            text-shadow: 3px 3px 7px #7780fc;
         }
-        .layout .content .text .amount span,
-        .layout .content .person-info .person span,
-        .layout .content .person-info .id span,
-        .layout .content .egyPound span {
+        
+        .content .date-money .money .earn {
+            border: 2px solid #9ba2a5;
+            padding: 3px 17px;
+            margin-left: 9px;
+            color: #e8e9ea;
             font-size: 20px;
+            border-radius: 10px;
         }
-        .layout .content .link {
-            font-size: 19px;
+        
+        .content .date-money .date input:focus {
+            outline: none;
         }
-        .layout .content .link img {
-            bottom: -6px;
+        
+        .content .link {
+            padding-bottom: 10px;
         }
-    }
-    
-    @media (min-width:1200px) {
-        .layout {
-            background-size: 84%;
+        
+        .content .link img {
+            margin-right: 3%;
+            height: 13px;
         }
-    }
-</style>
+        
+        .content .link a {
+            font-weight: bold;
+        }
+        
+        .content .egy_pound,
+        .content .person-info,
+        .content .link {
+            margin-top: 33px;
+        }
+        
+        .content .person-info .id .id_label {
+            margin-left: -90px;
+            font-size: 33px;
+            color: #e8e9ea;
+            font-weight: bold;
+        }
+        
+        .content .egy_pound .amount {
+            font-size: 23px;
+            color: white;
+            padding-left: 15px;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            .layout .content h1 {
+                font-size: 30px;
+                padding-top: 10px;
+            }
+            .layout .content img.logo {
+                right: -4px;
+                height: 31px;
+            }
+            .content .date-money .money .earn {
+                padding: 1px 7px;
+            }
+            .content .date-money .date input {
+                width: 55%;
+            }
+            .content .date-money .date input {
+                font-size: 15px;
+            }
+            .content .date-money .date span {
+                font-size: 20px;
+            }
+            .content .person-info .name .p_name {
+                font-size: 15px;
+                margin-left: 2px;
+                padding-left: 3px;
+            }
+            .content .date-money .money .egy {
+                font-size: 25px;
+            }
+            .content .person-info .id .id_label {
+                margin-left: -66px;
+                font-size: 25px;
+            }
+            .content .link a {
+                font-size: 12px;
+            }
+            .content .date-money .date span,
+            .content .person-info .name .p_label,
+            .content .egy_pound .egy_label,
+            .content .egy_pound .egy_label {
+                font-size: 14px;
+            }
+            .content .egy_pound .amount {
+                font-size: 15px;
+                margin-left: 4px;
+                padding-left: 0;
+            }
+            .content .egy_pound,
+            .content .person-info,
+            .content .link {
+                margin-top: 22px;
+            }
+        }
+        
+        @media only screen and (min-width: 768px) {
+            .layout .content img.logo {
+                right: -1px;
+            }
+            .content .date-money .money .egy {
+                font-size: 25px;
+            }
+            .content .date-money .date span,
+            .content .person-info .name .p_label,
+            .content .egy_pound .egy_label,
+            .content .egy_pound .egy_label {
+                font-size: 18px;
+            }
+            .content .egy_pound .amount {
+                font-size: 15px;
+            }
+            .content .person-info .name .p_name {
+                color: white;
+                font-size: 15px;
+            }
+            .content .person-info .id .id_label {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
 
 <body>
     <div class="container">
         <div class="row">
             <div class="layout col-sm-6">
-
                 <div class="content">
-                    <img src="logo1.jpg" class="img-fluid" alt="" srcset="">
-                    <h3>WEEKLY EARNING</h3>
-                    <div class="text row">
-                        <div class="date col-9"><span>DATE :</span><input type="date" name="" id="" readonly></div>
-                        <div class="amount col-3"> EGP<span>15000</span></div>
+                    <img src="logo1.jpg" class=" logo img-fluid" alt="" srcset="">
+                    <h1>WEEKLY EARNING</h1>
+                    <div class="date-money">
+                        <div class="date"><span>DATE :</span><input type="text" name="" id=""></div>
+                        <div class="money"><span class="egy">EGP:</span> <span class="earn">15000</span></div>
                     </div>
-                    <div class="person-info row">
-                        <div class="person">NAME : <span>محمد عبد الناصر همام</span></div>
-                        <div class="id"> ID: <span>012</span></div>
+                    <div class="person-info">
+                        <div class="name"><span class="p_label">NAME :</span> <span class="p_name">محمد عبد الناصر همام </span></div>
+                        <div class="id"><span class="id_label">ID:</span> <span class="p_id"></span></div>
                     </div>
-                    <div class="row">
-                        <div class="egyPound">EGYPTION POUNDS : <span>fiftin thousand pound</span></div>
-                        <div class="link"><img src="icon.png" alt="" srcset=""><a>HTTPS://ALHADABABRAND.COM/</a></div>
+                    <div class="egy_pound">
+                        <span class="egy_label">EGYPTIAN POUNDS : </span> <span class="amount">fifteen thousand pounds</span>
+                    </div>
+                    <div class="link">
+                        <img src="icon.png" alt="" srcset="" class="img-fluid">
+                        <a>HTTPS://ALHADABABRAND.COM/</a>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
+
 </body>
 
 </html>
